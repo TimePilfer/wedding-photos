@@ -18,6 +18,7 @@ export class ParseImagesComponent implements OnInit {
     this.httpService.send().then(response => {
       console.log(response);
       response.json().then(result => {
+        console.log(result.data);
         this.images = result.data;
         console.log(this.images);
         this.posts.data = this.images;
@@ -46,11 +47,11 @@ export class ParseImagesComponent implements OnInit {
 
 export class imageObject {
   img_id:string;
-  length:number;
 };
 
 export class responseObject {
   data:imageObject[];
+  length: number;
   pages:number;
   status:string;
 }
