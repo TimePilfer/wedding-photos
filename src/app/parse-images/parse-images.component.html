@@ -1,7 +1,7 @@
 <h4 class="productsText">Fotos de la boda de Nicté y James</h4>
 
 <div class="products" [photoGalleryGroup]="{ arrowEl: true, indexIndicatorSep: ' - ' }">
-    <div *ngFor="let dat of this.posts.data | slice:0:this.show; let i=index">
+    <div *ngFor="let dat of this.images | slice:0:this.show; let i=index">
         <div class="products-item">
             <div class="products-item-name">{{ dat.img_id }}</div>
             <div class="products-item-image" [photoGallery]="postImageUrl(dat.img_id)">
@@ -11,4 +11,4 @@
         
     </div>
 </div>
-<div class="viewMore" *ngIf="show < this.posts.data.length" (click)="increaseShow()">View More</div>
+<div class="viewMore" *ngIf="show < this.posts.length" (click)="increaseShow()">View More</div>
